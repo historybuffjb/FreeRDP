@@ -609,7 +609,7 @@ rdpSettings* freerdp_settings_new(DWORD flags)
 		/* these values are used only by the client part */
 		path = GetKnownPath(KNOWN_PATH_HOME);
 		rc = freerdp_settings_set_string(settings, FreeRDP_HomePath, path);
-		//safely_free(path);
+		//free(path);
 
 		if (!rc || !freerdp_settings_get_string(settings, FreeRDP_HomePath))
 			goto out_fail;
@@ -626,10 +626,10 @@ rdpSettings* freerdp_settings_new(DWORD flags)
 			{
 				char* combined = GetCombinedPath(base, FREERDP_PRODUCT_STRING);
 				res = freerdp_settings_set_string(settings, FreeRDP_ConfigPath, combined);
-				//safely_free(combined);
+				//free(combined);
 			}
 
-			//safely_free(base);
+			//free(base);
 			if (!res)
 				goto out_fail;
 		}
@@ -646,7 +646,7 @@ rdpSettings* freerdp_settings_new(DWORD flags)
 
 			cpath = GetKnownSubPath(KNOWN_PATH_XDG_CONFIG_HOME, product);
 			res = freerdp_settings_set_string(settings, FreeRDP_ConfigPath, cpath);
-			safely_free(cpath);
+			//free(cpath);
 			if (!res)
 				goto out_fail;
 		}

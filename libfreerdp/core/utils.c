@@ -213,9 +213,3 @@ BOOL utils_abort_event_is_set(rdpRdp* rdp)
 	status = WaitForSingleObject(rdp->abortEvent, 0);
 	return status == WAIT_OBJECT_0;
 }
-
-void safely_free(void *val) {
-	if (val != NULL) {
-		free(val);
-	}
-}
