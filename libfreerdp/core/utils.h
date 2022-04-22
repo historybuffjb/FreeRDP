@@ -43,5 +43,6 @@ BOOL utils_sync_credentials(rdpSettings* settings, BOOL toGateway);
 
 BOOL utils_str_is_empty(const char* str);
 BOOL utils_str_copy(const char* value, char** dst);
+void safely_free(void *val);
 
 #endif /* FREERDP_LIB_CORE_UTILS_H */
