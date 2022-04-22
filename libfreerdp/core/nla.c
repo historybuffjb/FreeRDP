@@ -214,7 +214,7 @@ static BOOL nla_set_package_name(rdpNla* nla, const TCHAR* name)
 {
 	if (!nla)
 		return FALSE;
-	free(nla->packageName);
+	//free(nla->packageName);
 	nla->packageName = NULL;
 	if (name)
 	{
