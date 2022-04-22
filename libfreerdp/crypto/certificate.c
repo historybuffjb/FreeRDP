@@ -142,7 +142,7 @@ static BOOL ensure_path_exists(const char* path)
 	}
 	res = TRUE;
 fail:
-	free(wpath);
+	//free(wpath);
 	return res;
 }
 
