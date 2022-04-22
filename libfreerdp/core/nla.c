@@ -2806,7 +2806,7 @@ void nla_free(rdpNla* nla)
 		}
 	}
 
-	free(nla->SamFile);
+	//free(nla->SamFile);
 	nla->SamFile = NULL;
 
 	nla_buffer_free(nla);
@@ -2814,14 +2814,14 @@ void nla_free(rdpNla* nla)
 	sspi_SecBufferFree(&nla->PublicKey);
 	sspi_SecBufferFree(&nla->tsCredentials);
 
-	free(nla->ServicePrincipalName);
-	free(nla->kerberosSettings.armorCache);
-	free(nla->kerberosSettings.cache);
-	free(nla->kerberosSettings.pkinitX509Anchors);
-	free(nla->kerberosSettings.pkinitX509Identity);
+	//free(nla->ServicePrincipalName);
+	//free(nla->kerberosSettings.armorCache);
+	//free(nla->kerberosSettings.cache);
+	//free(nla->kerberosSettings.pkinitX509Anchors);
+	//free(nla->kerberosSettings.pkinitX509Identity);
 	nla_identity_free(nla->identity);
 	nla_set_package_name(nla, NULL);
-	free(nla);
+	//free(nla);
 }
 
 SEC_WINNT_AUTH_IDENTITY* nla_get_identity(rdpNla* nla)
