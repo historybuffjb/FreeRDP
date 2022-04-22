@@ -609,6 +609,7 @@ rdpSettings* freerdp_settings_new(DWORD flags)
 		/* these values are used only by the client part */
 		path = GetKnownPath(KNOWN_PATH_HOME);
 		rc = freerdp_settings_set_string(settings, FreeRDP_HomePath, path);
+		WLog_ERR("JOHNS TAG", "This is path before free: %s", path);
 		//free(path);
 
 		if (!rc || !freerdp_settings_get_string(settings, FreeRDP_HomePath))
