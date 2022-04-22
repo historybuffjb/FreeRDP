@@ -19,6 +19,7 @@
  */
 
 #include <winpr/config.h>
+#include <winpr/wlog.h>
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -72,6 +73,7 @@ char* GetEnvAlloc(LPCSTR lpName)
 		if (!env)
 			return NULL;
 
+		WLog_ERR("JOHNS TAG", "Size of environment: %d", nSize);
 		nStatus = GetEnvironmentVariableX(lpName, env, nSize);
 
 		if (nStatus != (nSize - 1))
@@ -79,6 +81,7 @@ char* GetEnvAlloc(LPCSTR lpName)
 			free(env);
 			return NULL;
 		}
+		WLog_ERR("JOHNS TAG", "Actual address returned: %s", env);
 	}
 
 	return env;
